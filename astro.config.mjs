@@ -10,26 +10,20 @@ export default defineConfig({
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{
-			provider: fontProviders.local(),
-			name: 'Atkinson',
-			cssVariable: '--font-atkinson',
+			provider: fontProviders.google(),
+			name: 'Inter',
+			cssVariable: '--font-inter',
+			weights: ['100 900'],
+			styles: ['normal'],
 			fallbacks: ['sans-serif'],
-			options: {
-				variants: [
-					{
-						src: ['./src/assets/fonts/atkinson-regular.woff'],
-						weight: 400,
-						style: 'normal',
-						display: 'swap',
-					},
-					{
-						src: ['./src/assets/fonts/atkinson-bold.woff'],
-						weight: 700,
-						style: 'normal',
-						display: 'swap',
-					},
-				],
-			},
+		},
+		{
+			provider: fontProviders.google(),
+			name: 'Noto Sans SC',
+			cssVariable: '--font-noto-sans-sc',
+			weights: [400, 600],
+			styles: ['normal'],
+			fallbacks: ['sans-serif'],
 		},
 	],
 });

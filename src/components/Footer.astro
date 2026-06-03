@@ -3,13 +3,17 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} EigenSelf
+	<span>&copy; {today.getFullYear()} EigenSelf</span>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
+		width: 620px;
+		max-width: calc(100% - 2em);
+		margin: 4em auto 3em;
+		padding: 0 1em;
+		color: var(--text-muted);
+		font-size: 0.875em;
+		border-top: 1px solid var(--rule);
+		padding-top: 2em;
 	}
 </style>

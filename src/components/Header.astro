@@ -5,43 +5,47 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a class="brand" href="/">{SITE_TITLE}</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
 	</nav>
 </header>
 <style>
 	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
+		width: 620px;
+		max-width: calc(100% - 2em);
+		margin: 0 auto;
+		padding: 2em 1em 0;
 	}
 	nav {
 		display: flex;
-		align-items: center;
+		align-items: baseline;
 		justify-content: space-between;
+		gap: 1.5em;
+		flex-wrap: wrap;
+	}
+	.brand {
+		font-weight: 600;
+		font-size: 1em;
+		color: var(--text-strong);
+		text-decoration: none;
+		letter-spacing: -0.01em;
+	}
+	.internal-links {
+		display: flex;
+		gap: 1.25em;
 	}
 	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+		color: var(--text-muted);
 		text-decoration: none;
+		font-size: 0.95em;
+	}
+	nav a:hover {
+		color: var(--text);
 	}
 	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+		color: var(--text);
 	}
 </style>

@@ -1,31 +1,68 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.intro {
+				margin: 0 0 4em;
+			}
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			li {
+				margin: 0 0 1.25em;
+			}
+			li a {
+				color: var(--text-strong);
+				text-decoration: none;
+				display: block;
+				font-size: 1.0625em;
+				font-weight: 500;
+				line-height: 1.4;
+			}
+			li a:hover {
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>EigenSelf</h1>
-			<p>
-				A generative framework for self-understanding — built around a short survey
-				of the values that matter to you and how they connect, analyzed as a directed
-				network, and rendered as a personal report.
-			</p>
-			<p>
-				This site is where notes, essays, and excerpts about the framework live.
-				The reports themselves are delivered privately.
-			</p>
-			<p>
-				<a href="/blog">Read the writing →</a>
-			</p>
+			<section class="intro">
+				<p>
+					A generative framework for self-understanding — built around a short survey
+					of the values that matter to you and how they connect, analyzed as a directed
+					network, and rendered as a personal report.
+				</p>
+				<p>
+					This is where notes and essays about the framework live. The reports themselves
+					are delivered privately.
+				</p>
+			</section>
+			<section>
+				<ul>
+					{posts.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+						</li>
+					))}
+				</ul>
+			</section>
 		</main>
 		<Footer />
 	</body>
