@@ -2,6 +2,7 @@
 title: 'Welcome'
 description: 'A short note on what this site is for, and what will appear here.'
 pubDate: 'Jun 02 2026'
+draft: true
 ---
 
 This site is the public-facing home of EigenSelf — a generative framework for

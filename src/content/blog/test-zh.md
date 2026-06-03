@@ -3,6 +3,7 @@ title: '中文排版测试 — Chinese Typography Test'
 description: '一篇测试文章,用来在正式中文文章上线前检验字体、字号、行高、列宽与中英文混排效果。可在上线前删除。'
 pubDate: 'Jun 02 2026'
 lang: 'zh-Hans'
+draft: true
 ---
 
 这是一篇排版测试文章,用来检验中文在当前设计下的呈现效果。所有内容仅为测试用途,正式上线前可删除。
