@@ -1,0 +1,173 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+
+const PAGE_TITLE = 'EigenSelf — Understand yourself beyond labels';
+const PAGE_DESCRIPTION =
+	'EigenSelf helps you see the values quietly shaping your choices — and offers a hand-crafted Career Report for people navigating an important transition.';
+
+const EMAIL = 'info@eigenself.ai';
+const EXERCISE_URL = 'https://chenyux3.github.io/eigenself-survey/';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+		<style>
+			.wordmark {
+				width: 620px;
+				max-width: calc(100% - 2em);
+				margin: 0 auto;
+				padding: 2em 1em 0;
+				font-weight: 600;
+				font-size: 1em;
+				color: var(--text-strong);
+				letter-spacing: -0.01em;
+			}
+			.lede {
+				font-size: 1.125em;
+				color: var(--text);
+				margin: 0 0 2em;
+			}
+			section {
+				margin: 0 0 1em;
+			}
+			.cta-row {
+				display: flex;
+				align-items: center;
+				gap: 1.25em;
+				flex-wrap: wrap;
+				margin: 1.75em 0 0;
+			}
+			.cta-primary {
+				font-weight: 600;
+			}
+			.link-secondary {
+				color: var(--text-muted);
+				font-size: 0.95em;
+				text-decoration: none;
+			}
+			.link-secondary:hover {
+				color: var(--text);
+			}
+			.invitation {
+				color: var(--text-muted);
+				font-style: italic;
+			}
+			.diagram {
+				text-align: center;
+				line-height: 1.6;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wordmark">EigenSelf</div>
+		<main>
+			<!-- 1. Hero -->
+			<section>
+				<h1>Understand yourself beyond labels.</h1>
+				<p class="lede">
+					You are more than your title, your type, and your résumé — but
+					it's not always easy to say what that "more" is. EigenSelf helps
+					you see the values quietly shaping your choices, and how they
+					support, reinforce, and sometimes conflict with one another.
+				</p>
+				<div class="cta-row">
+					<a class="cta-primary" href={`mailto:${EMAIL}`}
+						>Ask about a Career Report →</a
+					>
+					<a class="link-secondary" href={EXERCISE_URL} target="_blank" rel="noopener"
+						>Curious? Try the 3-minute Value Exercise →</a
+					>
+				</div>
+			</section>
+
+			<!-- 2. What is EigenSelf? -->
+			<section>
+				<h2>What is EigenSelf?</h2>
+				<p>
+					Not another personality test. Not career advice. A way to
+					understand the values underlying your life and decisions — how
+					they connect, reinforce, and pull against one another.
+				</p>
+			</section>
+
+			<!-- 3. The Career Report -->
+			<section>
+				<h2>The Career Report</h2>
+				<p>
+					A deeper, evidence-based reflection for people navigating an
+					important career transition. Built from three inputs: the Value
+					Exercise, your CV, and your own account of where you are.
+				</p>
+				<p class="invitation">
+					Each report is analyzed by hand, so they're offered to a small
+					number of people at a time.
+				</p>
+				<div class="cta-row">
+					<a class="cta-primary" href={`mailto:${EMAIL}`}
+						>Ask about a Career Report</a
+					>
+				</div>
+			</section>
+
+			<!-- 4. How the Career Report Works -->
+			<section>
+				<h2>How the Career Report Works</h2>
+				<pre class="diagram">{`Value Exercise
+      +
+CV and Internal Story
+      ↓
+Evidence and Pattern Analysis
+      ↓
+Value Network
+      ↓
+Personalized Career Report`}</pre>
+				<p>
+					Each report is grounded in the evidence of your own life — not
+					generic personality categories.
+				</p>
+			</section>
+
+			<!-- 5. Why I Built EigenSelf -->
+			<section>
+				<h2>Why I Built EigenSelf</h2>
+				<p>
+					We live in an age that hands everyone a stack of labels — school,
+					job, income, personality type, life stage. They make us legible to
+					others, but they rarely explain how a person is actually put
+					together inside. AI makes the question sharper: when skills and
+					output can be replicated, what's left that is genuinely yours?
+				</p>
+				<p>
+					I built EigenSelf to answer that — not with another label, but by
+					looking at how your core values connect, reinforce, and pull
+					against one another. That inner shape is the part no one can assign
+					to you and no tool can replace.
+				</p>
+				<p>
+					It began as something I needed myself, during my own transition. I
+					didn't want a more optimized version of me — I wanted to see, more
+					clearly and honestly, how I actually work, and move forward from
+					there. EigenSelf is my attempt to make that kind of
+					self-understanding available to ordinary people, not only those
+					with the time, money, or right therapist to find it.
+				</p>
+			</section>
+
+			<!-- 6. Closing -->
+			<section>
+				<h2>Where to Begin</h2>
+				<p>
+					For Career Report invitations or any other conversation, reach out
+					at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>. Or start with the
+					3-minute <a href={EXERCISE_URL} target="_blank" rel="noopener"
+						>Value Exercise</a
+					> — a small glimpse into your value network.
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
